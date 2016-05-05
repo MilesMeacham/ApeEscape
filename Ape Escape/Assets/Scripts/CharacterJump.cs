@@ -10,8 +10,6 @@ public class CharacterJump : MonoBehaviour {
 	private Motor motor;
 	private GroundCheck groundCheck;
 
-//	[HideInInspector]
-	public bool doubleJumped;
 
 	void Start () 
 	{
@@ -24,13 +22,8 @@ public class CharacterJump : MonoBehaviour {
 	//keyboard jumping
 	public void Jump () 
 	{
-		if (groundCheck.grounded && !doubleJumped)
+		if (groundCheck.grounded)
 			motor.Vertical ();
-/*		else if (!doubleJumped) 
-		{
-			motor.Vertical ();
-			doubleJumped = true;
-	}
-*/	
+
 	}
 }
