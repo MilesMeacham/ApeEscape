@@ -298,6 +298,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalSpeed: 7
   jumpForce: 9
+  groundedAcceleration: 0.7
+  airborneAcceleration: 0.1
+  maxRunSpeed: 7
 --- !u!50 &733323321
 Rigidbody2D:
   serializedVersion: 2
@@ -354,7 +357,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695b4fa2324ab8a44bfbca311c911e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doubleJumped: 0
 --- !u!1 &982646977
 GameObject:
   m_ObjectHideFlags: 0
