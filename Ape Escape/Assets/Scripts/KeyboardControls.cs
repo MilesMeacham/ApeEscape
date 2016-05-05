@@ -21,12 +21,12 @@ public class KeyboardControls : MonoBehaviour {
 	void Update () 
 	{
 		// LEFT STOP
-		if (Input.GetKeyUp (KeyCode.A))
-			motor.Horizontal (stop);
+//		if (Input.GetKeyUp (KeyCode.A))
+//			motor.Horizontal (stop);
 
 		// RIGHT STOP
-		if (Input.GetKeyUp (KeyCode.D))
-			motor.Horizontal (stop);
+//		if (Input.GetKeyUp (KeyCode.D))
+//			motor.Horizontal (stop);
 
 		// JUMP
 		if (Input.GetKey (KeyCode.Space))
@@ -45,6 +45,8 @@ public class KeyboardControls : MonoBehaviour {
 		// LEFT
 		if (Input.GetKey (KeyCode.A))
 			motor.Horizontal (-1);
+
+
 
 	}
 }

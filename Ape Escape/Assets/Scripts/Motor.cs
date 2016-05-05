@@ -22,6 +22,9 @@ public class Motor : MonoBehaviour {
 	// Pass 1 or -1 for right and left and 0 to stop instantly
 	public void Horizontal(float direction)
 	{
+
+
+
 		rb.velocity = new Vector2 (horizontalSpeed * direction, rb.velocity.y);
 	}
 
