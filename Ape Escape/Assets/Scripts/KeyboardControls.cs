@@ -40,11 +40,11 @@ public class KeyboardControls : MonoBehaviour {
 	{
 		// RIGHT
 		if (Input.GetKey (KeyCode.D))
-			motor.Horizontal (1);
+			motor.RightHorizontal (1);
 
 		// LEFT
 		if (Input.GetKey (KeyCode.A))
-			motor.Horizontal (-1);
+			motor.LeftHorizontal (-1);
 
 
 
