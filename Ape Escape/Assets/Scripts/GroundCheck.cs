@@ -11,8 +11,9 @@ public class GroundCheck : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D collider)
 	{
 		// Layer 8 is the ground Layer
-		if (collider.gameObject.layer == 8)
+		if (collider.gameObject.layer == 8) {
 			grounded = true;
+		}
 	}
 
 

@@ -5,10 +5,10 @@ using UnityEngine;
 using System.Collections;
 
 public class Motor : MonoBehaviour {
-
-	private Rigidbody2D rb;
+	[HideInInspector]
+	public Rigidbody2D rb;
 	private GroundCheck groundcheck;
-	private float direction = 1;
+	//private float direction = 1;
 	private Vector3 scale;
 
 	public float jumpForce = 9;
@@ -27,9 +27,11 @@ public class Motor : MonoBehaviour {
 
 
 
-	public void RightHorizontal(float speed)
+	public void Horizontal(float direction)
 	{
-		if (!facingRight)
+		if (direction > 0 && !facingRight)
+			Flip ();
+		else if (direction < 0 && facingRight)
 			Flip ();
 
 		float maxSpeedAdjusted;
@@ -63,43 +65,6 @@ public class Motor : MonoBehaviour {
 		print (rb.velocity);
 	}
 
-
-	public void LeftHorizontal(float speed)
-	{
-		if (facingRight)
-			Flip ();
-
-		float maxSpeedAdjusted;
-		float velocityDelta;
-
-		maxSpeedAdjusted = maxRunSpeed * direction;
-
-		if(groundcheck.grounded)
-			velocityDelta = direction * groundedAcceleration;
-		else
-			velocityDelta = direction * airborneAcceleration;
-
-		float newVelocity = rb.velocity.x + velocityDelta;
-
-		if (direction < 0 && rb.velocity.x > maxSpeedAdjusted) 
-		{
-			if (newVelocity < maxSpeedAdjusted)
-				newVelocity = maxSpeedAdjusted;
-
-			rb.velocity = new Vector2 (newVelocity, rb.velocity.y);
-		} 
-		else if (direction > 0 && rb.velocity.x < maxSpeedAdjusted) 
-		{
-			if (newVelocity > maxSpeedAdjusted)
-				newVelocity = maxSpeedAdjusted;
-
-			rb.velocity = new Vector2 (newVelocity, rb.velocity.y);
-		}
-
-
-		print (rb.velocity);
-	}
-
 	// This makes the player jump.
 	public void Vertical()
 	{
@@ -115,7 +80,7 @@ public class Motor : MonoBehaviour {
 		facingRight = !facingRight;
 
 		// Reverses the speed;
-		direction *= -1;
+		//direction *= -1;
 
 		scale.x *= -1;
 		transform.localScale = scale;
