@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0436473cb7abe849bd7d3b6c65eeaf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 7
+  jumpForce: 9
   groundedAcceleration: 1
   airborneAcceleration: 0.5
   maxRunSpeed: 9
