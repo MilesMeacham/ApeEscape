@@ -8,6 +8,7 @@ public class KeyboardControls : MonoBehaviour {
 
 	private Motor motor;
 	private CharacterJump jump;
+	private Swing swing;
 	private float stop = 0;
 
 
@@ -15,6 +16,7 @@ public class KeyboardControls : MonoBehaviour {
 	{
 		motor = GetComponent<Motor> ();
 		jump = GetComponent<CharacterJump> ();
+		swing = GetComponent<Swing> ();
 	}
 
 	// Called Every Frame. Use for Jumping and Shooting (Not Movement)
@@ -31,6 +33,16 @@ public class KeyboardControls : MonoBehaviour {
 		// JUMP
 		if (Input.GetKey (KeyCode.Space))
 			jump.Jump ();
+
+		// SWING STUFF
+		if (Input.GetKeyDown (KeyCode.F))
+			swing.SwingAttach ();
+
+		if (Input.GetKey (KeyCode.F))
+			swing.SwingAttachCheck ();
+
+		if (Input.GetKeyUp (KeyCode.F))
+			swing.SwingDetach ();
 
 
 	}
