@@ -9,13 +9,16 @@ public class CharacterJump : MonoBehaviour {
 
 	private Motor motor;
 	private GroundCheck groundCheck;
+	private SwingCollider swingCollider;
+	private Swing swing;
 
 
 	void Start () 
 	{
 		groundCheck = GetComponentInChildren<GroundCheck> ();
 		motor = GetComponent<Motor> ();
-
+		swingCollider = GetComponentInChildren<SwingCollider> ();
+		swing = GetComponentInChildren<Swing> ();
 	}
 		
 
@@ -24,6 +27,9 @@ public class CharacterJump : MonoBehaviour {
 	{
 		if (groundCheck.grounded)
 			motor.Vertical ();
-
+		if (swingCollider.attach) {
+			swing.SwingDetach ();
+			motor.Vertical ();
+		}
 	}
 }

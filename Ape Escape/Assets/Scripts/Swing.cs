@@ -26,11 +26,11 @@ public class Swing : MonoBehaviour {
 
 	public void SwingAttachCheck ()
 	{
-		if (swingCollider.attach == true && hinge.enabled != true) 
-		{
+		if (swingCollider.attach == true && hinge.enabled != true) {
 			hinge.enabled = true;
 			baseLink.enabled = true;
-		}
+		} else
+			SwingAttach ();
 
 	}
 

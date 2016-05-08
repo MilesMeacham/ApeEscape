@@ -8,6 +8,7 @@ public class Motor : MonoBehaviour {
 	[HideInInspector]
 	public Rigidbody2D rb;
 	private GroundCheck groundcheck;
+	private SwingCollider swingCollider;
 	//private float direction = 1;
 	private Vector3 scale;
 
@@ -22,6 +23,7 @@ public class Motor : MonoBehaviour {
 	{
 		rb = GetComponent<Rigidbody2D> ();
 		groundcheck = GetComponentInChildren<GroundCheck> ();
+		swingCollider = GetComponentInChildren<SwingCollider> ();
 		scale = transform.localScale;
 	}
 
@@ -29,10 +31,12 @@ public class Motor : MonoBehaviour {
 
 	public void Horizontal(float direction)
 	{
-		if (direction > 0 && !facingRight)
-			Flip ();
-		else if (direction < 0 && facingRight)
-			Flip ();
+		if (!swingCollider.attach) {
+			if (direction > 0 && !facingRight)
+				Flip ();
+			else if (direction < 0 && facingRight)
+				Flip ();
+		}
 
 		float maxSpeedAdjusted;
 		float velocityDelta;
