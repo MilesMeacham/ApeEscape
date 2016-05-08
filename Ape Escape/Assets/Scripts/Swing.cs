@@ -13,6 +13,10 @@ public class Swing : MonoBehaviour {
 
 	private bool attach = false;
 
+	[HideInInspector]
+	public float xPos = 0;
+
+
 
 	void Start ()
 	{
@@ -30,8 +34,11 @@ public class Swing : MonoBehaviour {
 	public void SwingAttachCheck ()
 	{
 		if (swingCollider.attach == true && hinge.enabled != true) {
+			rb.position = new Vector2 (xPos, rb.position.y);
+
 			hinge.enabled = true;
 			baseLink.enabled = true;
+		
 			rb.velocity = new Vector2 (rb.velocity.x * 3, rb.velocity.y);
 		} else
 			SwingAttach ();
