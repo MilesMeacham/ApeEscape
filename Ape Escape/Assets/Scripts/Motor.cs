@@ -43,7 +43,7 @@ public class Motor : MonoBehaviour {
 
 		maxSpeedAdjusted = maxRunSpeed * direction;
 
-		if(groundcheck.grounded)
+		if(groundcheck.grounded || swingCollider.attach)
 			velocityDelta = direction * groundedAcceleration;
 		else
 			velocityDelta = direction * airborneAcceleration;
