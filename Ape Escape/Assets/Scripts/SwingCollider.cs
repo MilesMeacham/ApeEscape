@@ -19,4 +19,13 @@ public class SwingCollider : MonoBehaviour {
 		}
 	}
 
+	void OnTriggerExit2D (Collider2D collider)
+	{
+		if (collider.gameObject.layer == 9 && attach == false) 
+		{
+			swing.xPos = 0;
+			attach = false;
+		}
+	}
+
 }
