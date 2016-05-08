@@ -13,6 +13,8 @@ public class SwingCollider : MonoBehaviour {
 			
 			swing.hinge.connectedBody = collider.gameObject.GetComponent<Rigidbody2D> ();
 			swing.baseLink.connectedBody = collider.transform.parent.GetComponent<Rigidbody2D> ();
+			swing.xPos = collider.gameObject.GetComponent<Rigidbody2D> ().position.x;
+
 			attach = true;
 		}
 	}
