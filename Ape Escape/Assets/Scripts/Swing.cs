@@ -9,6 +9,7 @@ public class Swing : MonoBehaviour {
 	public DistanceJoint2D baseLink;
 	public BoxCollider2D swingBoxCollider;
 	public SwingCollider swingCollider;
+	private Rigidbody2D rb;
 
 	private bool attach = false;
 
@@ -17,6 +18,7 @@ public class Swing : MonoBehaviour {
 	{
 		hinge = GetComponent<HingeJoint2D> ();
 		baseLink = GetComponent<DistanceJoint2D> ();
+		rb = GetComponent<Rigidbody2D> ();
 	}
 
 	public void SwingAttach ()
@@ -29,6 +31,7 @@ public class Swing : MonoBehaviour {
 		if (swingCollider.attach == true && hinge.enabled != true) {
 			hinge.enabled = true;
 			baseLink.enabled = true;
+			rb.velocity = new Vector2 (rb.velocity.x * 3, rb.velocity.y);
 		} else
 			SwingAttach ();
 
@@ -36,11 +39,12 @@ public class Swing : MonoBehaviour {
 
 	public void SwingDetach ()
 	{
-		swingBoxCollider.gameObject.SetActive (false);
-		hinge.enabled = false;
-		baseLink.enabled = false;
-		swingCollider.attach = false;
-
+		if (swingCollider.attach == true) {
+			swingBoxCollider.gameObject.SetActive (false);
+			hinge.enabled = false;
+			baseLink.enabled = false;
+			swingCollider.attach = false;
+		}
 
 	}
 
