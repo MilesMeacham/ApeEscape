@@ -19,6 +19,7 @@ public class Swing : MonoBehaviour {
 		hinge = GetComponent<HingeJoint2D> ();
 		baseLink = GetComponent<DistanceJoint2D> ();
 		rb = GetComponent<Rigidbody2D> ();
+		swingBoxCollider.gameObject.SetActive (false);
 	}
 
 	public void SwingAttach ()
