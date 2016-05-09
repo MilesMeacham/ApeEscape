@@ -13,6 +13,7 @@ public class Motor : MonoBehaviour {
 	private Vector3 scale;
 
 	public float jumpForce = 9;
+	public float swingJumpForce = 7;
 	public float groundedAcceleration = 1f;
 	public float airborneAcceleration = 0.5f;
 	public float maxRunSpeed = 9f;
@@ -69,13 +70,21 @@ public class Motor : MonoBehaviour {
 		print (rb.velocity);
 	}
 
-	// This makes the player jump.
-	public void Vertical()
+	public void RawHorizontal(float direction)
 	{
+		float newVelocity = rb.velocity.x + direction;
+		rb.velocity = new Vector2 (newVelocity, rb.velocity.y);
+	}
+
+	// This makes the player jump.
+	public void Vertical(float force = 0f)
+	{
+		if (force == 0f) {
+			force = jumpForce;
+		}
 
 		// WE NEED TO DECIDE BETWEEN THESE TWO WAYS OF JUMPING
-
-		rb.velocity = new Vector2 (rb.velocity.x, jumpForce);
+		rb.velocity = new Vector2 (rb.velocity.x, force);
 		//rb.AddForce (new Vector2 (rb.velocity.x, jumpForce));
 	}
 
