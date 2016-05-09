@@ -66,8 +66,6 @@ public class Motor : MonoBehaviour {
 			rb.velocity = new Vector2 (newVelocity, rb.velocity.y);
 		}
 			
-
-		print (rb.velocity);
 	}
 
 	public void RawHorizontal(float direction)

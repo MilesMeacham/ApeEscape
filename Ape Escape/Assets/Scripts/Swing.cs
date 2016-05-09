@@ -42,7 +42,7 @@ public class Swing : MonoBehaviour {
 			baseLink.enabled = true;
 		
 			//rb.velocity = new Vector2 (rb.velocity.x * 2, rb.velocity.y);
-			motor.RawHorizontal (Mathf.Sign(rb.velocity.x)*4);
+			motor.RawHorizontal (Mathf.Sign (rb.velocity.x) * 4);
 		} else
 			SwingAttach ();
 

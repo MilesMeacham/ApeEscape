@@ -6,11 +6,11 @@ public class SwingCollider : MonoBehaviour {
 	public bool attach = false;
 	public Swing swing;
 
-	void OnTriggerStay2D (Collider2D collider)
+	void OnTriggerEnter2D (Collider2D collider)
 	{
 		if (collider.gameObject.layer == 9 && attach == false) 
 		{
-			
+			print (collider.transform.root.GetInstanceID());
 			swing.hinge.connectedBody = collider.gameObject.GetComponent<Rigidbody2D> ();
 			swing.baseLink.connectedBody = collider.transform.parent.GetComponent<Rigidbody2D> ();
 			swing.xPos = collider.gameObject.GetComponent<Rigidbody2D> ().position.x;
