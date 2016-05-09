@@ -29,7 +29,7 @@ public class CharacterJump : MonoBehaviour {
 		if (swingCollider.attach) {
 			swing.SwingDetach ();
 			motor.Vertical (motor.swingJumpForce);
-			motor.Horizontal (Mathf.Sign(motor.rb.velocity.x)*3);
+			motor.RawHorizontal (Mathf.Sign(motor.rb.velocity.x)*2);
 		}
 	}
 }
