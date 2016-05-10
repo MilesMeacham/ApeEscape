@@ -38,7 +38,7 @@ public class Swing : MonoBehaviour {
 
 	public void SwingAttachCheck ()
 	{
-        if (swingCollider.attach == true && hinge.enabled != true && last_attached_id != current_rope_id)// && (reattachCounter <= 0 || last_attached_id != current_rope_id)) 
+        if (swingCollider.attach == true && hinge.enabled != true && (reattachCounter <= 0 || last_attached_id != current_rope_id)) 
         {
             rb.position = new Vector2 (xPos, rb.position.y);
 
@@ -55,11 +55,11 @@ public class Swing : MonoBehaviour {
 	public void SwingDetach ()
 	{
 		if (swingCollider.attach) {
-            //if (hinge.enabled)
-            //{
+            if (hinge.enabled)
+            {
                 last_attached_id = current_rope_id;
-            //    reattachCounter = 1;
-            //}
+                reattachCounter = 1;
+            }
             swingBoxCollider.gameObject.SetActive (false);
 			hinge.enabled = false;
 			baseLink.enabled = false;
@@ -70,8 +70,8 @@ public class Swing : MonoBehaviour {
 
     void FixedUpdate()
     {
-        //if(reattachCounter >= 0)
-        //    reattachCounter -= (Time.deltaTime);
+        if(reattachCounter >= 0)
+            reattachCounter -= (Time.deltaTime);
     }
 
 }
