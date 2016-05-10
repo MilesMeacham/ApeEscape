@@ -38,7 +38,7 @@ public class KeyboardControls : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.F))
 			swing.SwingAttach ();
 
-		if (Input.GetKey (KeyCode.F))
+        if (Input.GetKey(KeyCode.F))
 			swing.SwingAttachCheck ();
 
 		if (Input.GetKeyUp (KeyCode.F))
