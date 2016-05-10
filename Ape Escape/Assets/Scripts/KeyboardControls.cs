@@ -31,7 +31,7 @@ public class KeyboardControls : MonoBehaviour {
 //			motor.Horizontal (stop);
 
 		// JUMP
-		if (Input.GetKey (KeyCode.Space))
+		if (Input.GetKeyDown (KeyCode.Space))
 			jump.Jump ();
 
 		// SWING STUFF
