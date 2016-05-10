@@ -1,5 +1,4 @@
-﻿// AUTHOR: Miles
-// DESCRIPTION: Limits the jump of the player. He needs to be grounded to jump
+﻿// DESCRIPTION: Limits the jump of the player. He needs to be grounded to jump
 // REQUIREMENTS: Needs "Ground Check" as a child object of this game object
 
 using UnityEngine;

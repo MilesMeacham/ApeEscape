@@ -21,6 +21,9 @@ public class Swing : MonoBehaviour {
 	public float xPos = 0;
 
 
+	private float swingDelay = 0.5f;
+	private bool swingDetachDelay = false;
+
 
 	void Start ()
 	{
@@ -38,7 +41,11 @@ public class Swing : MonoBehaviour {
 
 	public void SwingAttachCheck ()
 	{
-        if (swingCollider.attach == true && hinge.enabled != true && (reattachCounter <= 0 || last_attached_id != current_rope_id)) 
+		// ALLEN, I ADDED THIS
+		if (swingBoxCollider.gameObject.active == false && swingDetachDelay == false)
+			swingBoxCollider.gameObject.SetActive(true);
+
+        if (swingCollider.attach == true && hinge.enabled != true) 
         {
             rb.position = new Vector2 (xPos, rb.position.y);
 
@@ -47,31 +54,50 @@ public class Swing : MonoBehaviour {
 		
 			//rb.velocity = new Vector2 (rb.velocity.x * 2, rb.velocity.y);
 			motor.RawHorizontal (Mathf.Sign (rb.velocity.x) * 4);
-		} else
-			SwingAttach ();
+		} //else
+			//SwingAttach ();
 
 	}
 
 	public void SwingDetach ()
 	{
-		if (swingCollider.attach) {
+/*		if (swingCollider.attach) {
             if (hinge.enabled)
             {
                 last_attached_id = current_rope_id;
                 reattachCounter = 1;
             }
-            swingBoxCollider.gameObject.SetActive (false);
+*/
+			swingBoxCollider.gameObject.SetActive (false);
 			hinge.enabled = false;
 			baseLink.enabled = false;
 			swingCollider.attach = false;
-        }
+	
+
+		// ALLEN, I ADDED THIS
+		if (!swingDetachDelay)
+			StartCoroutine(SwingDetachDelayCO());
+			
+        //}
 
 	}
 
+
+	IEnumerator SwingDetachDelayCO()
+	{
+		swingDetachDelay = true;
+
+		yield return new WaitForSeconds(swingDelay);
+
+		swingDetachDelay = false;
+
+	}
+
+
     void FixedUpdate()
     {
-        if(reattachCounter >= 0)
-            reattachCounter -= (Time.deltaTime);
+        //if(reattachCounter >= 0)
+          //  reattachCounter -= (Time.deltaTime);
     }
 
 }
