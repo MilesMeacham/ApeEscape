@@ -13,12 +13,12 @@ public class SwingCollider : MonoBehaviour {
 
 	void OnTriggerStay2D (Collider2D collider)
 	{
-        swing.current_rope_id = collider.transform.root.GetInstanceID();
         if (collider.gameObject.layer == 9 && attach == false) 
 		{
-			swing.hinge.connectedBody = collider.gameObject.GetComponent<Rigidbody2D> ();
-			swing.baseLink.connectedBody = collider.transform.parent.GetComponent<Rigidbody2D> ();
-			swing.xPos = collider.gameObject.GetComponent<Rigidbody2D> ().position.x;
+            swing.current_rope_id = collider.transform.root.GetInstanceID();
+            swing.xPos = collider.gameObject.GetComponent<Rigidbody2D>().position.x;
+            swing.hinge.connectedBody = collider.gameObject.GetComponent<Rigidbody2D>();
+            swing.baseLink.connectedBody = collider.transform.parent.GetComponent<Rigidbody2D>();
 
             attach = true;
 		}
