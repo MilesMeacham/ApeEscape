@@ -12,7 +12,6 @@ public class Swing : MonoBehaviour {
     public int last_attached_id;
 	private Rigidbody2D rb;
 	private Motor motor;
-    public float reattachCounter = 0f;
     public int current_rope_id;
 
 	private bool attach = false;
@@ -41,8 +40,7 @@ public class Swing : MonoBehaviour {
 
 	public void SwingAttachCheck ()
 	{
-		// ALLEN, I ADDED THIS
-		if (swingBoxCollider.gameObject.active == false && swingDetachDelay == false)
+		if (swingBoxCollider.gameObject.active == false && (swingDetachDelay == false || last_attached_id != current_rope_id))
 			swingBoxCollider.gameObject.SetActive(true);
 
         if (swingCollider.attach == true && hinge.enabled != true) 
@@ -52,33 +50,25 @@ public class Swing : MonoBehaviour {
 			hinge.enabled = true;
 			baseLink.enabled = true;
 		
-			//rb.velocity = new Vector2 (rb.velocity.x * 2, rb.velocity.y);
 			motor.RawHorizontal (Mathf.Sign (rb.velocity.x) * 4);
-		} //else
-			//SwingAttach ();
+		} 
 
 	}
 
 	public void SwingDetach ()
 	{
-/*		if (swingCollider.attach) {
             if (hinge.enabled)
             {
                 last_attached_id = current_rope_id;
-                reattachCounter = 1;
             }
-*/
 			swingBoxCollider.gameObject.SetActive (false);
 			hinge.enabled = false;
 			baseLink.enabled = false;
 			swingCollider.attach = false;
 	
 
-		// ALLEN, I ADDED THIS
 		if (!swingDetachDelay)
 			StartCoroutine(SwingDetachDelayCO());
-			
-        //}
 
 	}
 
@@ -94,10 +84,16 @@ public class Swing : MonoBehaviour {
 	}
 
 
+	void OnTriggerEnter2D(Collider2D collider)
+	{
+		if(collider.gameObject.layer == 9)
+			current_rope_id = collider.transform.root.GetInstanceID();
+	}
+
+
     void FixedUpdate()
     {
-        //if(reattachCounter >= 0)
-          //  reattachCounter -= (Time.deltaTime);
+		
     }
 
 }
