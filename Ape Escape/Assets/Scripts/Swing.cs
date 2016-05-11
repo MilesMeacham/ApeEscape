@@ -50,7 +50,7 @@ public class Swing : MonoBehaviour {
 			hinge.enabled = true;
 			baseLink.enabled = true;
 		
-			motor.RawHorizontal (Mathf.Sign (rb.velocity.x) * 4);
+			motor.RawHorizontal (Mathf.Sign (rb.velocity.x) * 7);
 		} 
 
 	}
