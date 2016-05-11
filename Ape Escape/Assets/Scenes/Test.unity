@@ -152,8 +152,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!50 &89987750
 Rigidbody2D:
   serializedVersion: 2
@@ -162,10 +162,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 89987746}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -232,10 +232,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 141381197}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -274,10 +274,10 @@ HingeJoint2D:
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
-  m_UseLimits: 1
+  m_UseLimits: 0
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!23 &141381201
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -365,10 +365,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 163070693}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -409,8 +409,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!23 &163070697
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -662,7 +662,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 1
   m_AngularDrag: 0.25
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -798,10 +798,10 @@ HingeJoint2D:
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
-  m_UseLimits: 1
+  m_UseLimits: 0
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!50 &287332973
 Rigidbody2D:
   serializedVersion: 2
@@ -810,10 +810,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 287332971}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1007,10 +1007,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 306584199}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1051,8 +1051,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!23 &306584203
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1126,10 +1126,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 310472829}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1170,8 +1170,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!23 &310472833
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1245,10 +1245,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 333510561}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1289,8 +1289,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!23 &333510565
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1703,10 +1703,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 462595741}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1747,8 +1747,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!23 &462595745
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1880,10 +1880,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 503418199}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1924,8 +1924,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!23 &503418203
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1999,10 +1999,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 510832048}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2043,8 +2043,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!23 &510832052
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2118,10 +2118,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 521125443}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2162,8 +2162,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!23 &521125447
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2399,8 +2399,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!50 &646052594
 Rigidbody2D:
   serializedVersion: 2
@@ -2409,10 +2409,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 646052590}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2479,10 +2479,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 657783015}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2523,8 +2523,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!23 &657783019
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2714,10 +2714,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 728305757}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2758,8 +2758,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!23 &728305761
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2855,7 +2855,9 @@ MonoBehaviour:
   swingJumpForce: 7
   groundedAcceleration: 1
   airborneAcceleration: 0.5
+  swingingAcceleration: 9
   maxRunSpeed: 9
+  maxSwingSpeed: 9
   facingRight: 1
 --- !u!50 &733323321
 Rigidbody2D:
@@ -3072,7 +3074,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 1
   m_AngularDrag: 0.25
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -3164,8 +3166,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!50 &771433424
 Rigidbody2D:
   serializedVersion: 2
@@ -3174,10 +3176,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 771433421}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -3626,10 +3628,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1021485336}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -3670,8 +3672,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!23 &1021485340
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3763,10 +3765,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1029555451}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -3805,10 +3807,10 @@ HingeJoint2D:
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
-  m_UseLimits: 1
+  m_UseLimits: 0
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!23 &1029555456
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4066,8 +4068,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!50 &1086221447
 Rigidbody2D:
   serializedVersion: 2
@@ -4076,10 +4078,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1086221443}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -4241,10 +4243,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1127456297}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -4285,8 +4287,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!23 &1127456301
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4389,10 +4391,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1167307561}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -4433,8 +4435,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!23 &1167307565
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4534,10 +4536,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1218946258}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -4576,7 +4578,7 @@ HingeJoint2D:
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
-  m_UseLimits: 1
+  m_UseLimits: 0
   m_AngleLimits:
     m_LowerAngle: -30
     m_UpperAngle: 30
@@ -4708,8 +4710,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!50 &1264876698
 Rigidbody2D:
   serializedVersion: 2
@@ -4718,10 +4720,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1264876694}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -4788,10 +4790,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1341430930}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -4832,8 +4834,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!23 &1341430934
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4907,10 +4909,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1372248690}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -4951,8 +4953,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!23 &1372248694
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5026,10 +5028,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1377848639}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -5070,8 +5072,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!23 &1377848643
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5216,7 +5218,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 1
   m_AngularDrag: 0.25
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -5283,10 +5285,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1485520249}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -5327,8 +5329,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!23 &1485520253
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5459,10 +5461,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1537986533}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -5489,8 +5491,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!61 &1537986536
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5578,10 +5580,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1568290145}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -5622,8 +5624,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!23 &1568290149
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5840,10 +5842,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1707070765}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -5884,8 +5886,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!23 &1707070769
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5998,8 +6000,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!50 &1730166577
 Rigidbody2D:
   serializedVersion: 2
@@ -6008,10 +6010,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1730166573}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -6193,8 +6195,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!50 &1785861289
 Rigidbody2D:
   serializedVersion: 2
@@ -6203,10 +6205,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1785861285}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -6273,10 +6275,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1798676828}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -6303,8 +6305,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!61 &1798676831
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6392,10 +6394,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1817190626}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -6436,8 +6438,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!23 &1817190630
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6542,10 +6544,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1841575369}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -6586,8 +6588,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!23 &1841575373
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6674,8 +6676,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!50 &1864111514
 Rigidbody2D:
   serializedVersion: 2
@@ -6684,10 +6686,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1864111512}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -6838,10 +6840,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1933309154}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -6882,8 +6884,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!23 &1933309158
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6996,8 +6998,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!50 &1944687378
 Rigidbody2D:
   serializedVersion: 2
@@ -7006,10 +7008,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1944687374}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -7134,10 +7136,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2000071840}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -7164,8 +7166,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!61 &2000071843
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7324,7 +7326,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 1
   m_AngularDrag: 0.25
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -7565,10 +7567,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2105195995}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -7609,8 +7611,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!23 &2105195999
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7723,8 +7725,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -70
+    m_UpperAngle: 70
 --- !u!50 &2146492820
 Rigidbody2D:
   serializedVersion: 2
@@ -7733,10 +7735,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2146492816}
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 0.2
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_AngularDrag: 0.1
+  m_GravityScale: 5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1

@@ -16,7 +16,9 @@ public class Motor : MonoBehaviour {
 	public float swingJumpForce = 7;
 	public float groundedAcceleration = 1f;
 	public float airborneAcceleration = 0.5f;
+	public float swingingAcceleration = 9f;
 	public float maxRunSpeed = 9f;
+	public float maxSwingSpeed = 9f;
 
 	public bool facingRight = true;
 
@@ -42,12 +44,18 @@ public class Motor : MonoBehaviour {
 		float maxSpeedAdjusted;
 		float velocityDelta;
 
-		maxSpeedAdjusted = maxRunSpeed * direction;
-
-		if(groundcheck.grounded || swingCollider.attach)
+		if (swingCollider.attach) 
+		{
+			velocityDelta = direction * swingingAcceleration;
+			maxSpeedAdjusted = maxSwingSpeed * direction;
+		}
+		else if (groundcheck.grounded) {
+			maxSpeedAdjusted = maxRunSpeed * direction;
 			velocityDelta = direction * groundedAcceleration;
-		else
+		} else {
+			maxSpeedAdjusted = maxRunSpeed * direction;
 			velocityDelta = direction * airborneAcceleration;
+		}
 		
 		float newVelocity = rb.velocity.x + velocityDelta;
 
