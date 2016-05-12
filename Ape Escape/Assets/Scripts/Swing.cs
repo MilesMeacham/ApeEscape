@@ -52,7 +52,11 @@ public class Swing : MonoBehaviour {
 			hinge.enabled = true;
 			baseLink.enabled = true;
 		
-			motor.RawHorizontal ((Mathf.Sign (rb.velocity.x) * Mathf.Abs(rb.velocity.y)) * 2);
+			float boost = rb.velocity.x + Mathf.Abs (rb.velocity.y);
+			if (Mathf.Abs (boost) < 2)
+				boost = Mathf.Sign (boost) * 3;
+			print (boost);
+			motor.RawHorizontal (boost);
 		} 
 
 	}

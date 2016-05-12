@@ -18,7 +18,7 @@ public class Motor : MonoBehaviour {
 	public float airborneAcceleration = 0.5f;
 	public float swingingAcceleration = 15f;
 	public float maxRunSpeed = 9f;
-	public float maxSwingSpeed = 15f;
+	public float maxSwingSpeed = 17f;
 
 	public bool facingRight = true;
 
