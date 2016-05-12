@@ -12,6 +12,8 @@ public class Motor : MonoBehaviour {
 	//private float direction = 1;
 	private Vector3 scale;
 
+	private float swingingAccelerationModified = 0;
+
 	public float jumpForce = 9;
 	public float swingJumpForce = 7;
 	public float groundedAcceleration = 1f;
@@ -28,6 +30,7 @@ public class Motor : MonoBehaviour {
 		groundcheck = GetComponentInChildren<GroundCheck> ();
 		swingCollider = GetComponentInChildren<SwingCollider> ();
 		scale = transform.localScale;
+		swingingAccelerationModified = swingingAcceleration;
 	}
 
 
@@ -46,8 +49,11 @@ public class Motor : MonoBehaviour {
 
 		if (swingCollider.attach) 
 		{
+			float swingingAccelerationModified = (Mathf.Abs (rb.velocity.x) + Mathf.Abs (rb.velocity.y)) * 0.2f;
+			if (swingingAccelerationModified < 1)
+				swingingAccelerationModified = 1;
 			float average_angle = (swingCollider.swing.hinge.jointAngle + -swingCollider.swing.connected_hinge.jointAngle) / 2;
-			float accel = (swingingAcceleration * 10) - (Mathf.Abs(average_angle) * 3);
+			float accel = (swingingAccelerationModified) - (Mathf.Abs(average_angle) * 0.1f);
 			if (Mathf.Sign (rb.velocity.x) != Mathf.Sign (direction)) {
 				accel = 0;//accel - (Mathf.Abs(average_angle) * 2);
 			} else
@@ -56,6 +62,7 @@ public class Motor : MonoBehaviour {
 				accel = 0;
 			velocityDelta = direction * accel;
 			maxSpeedAdjusted = maxSwingSpeed * direction;
+			swingingAccelerationModified = swingingAcceleration;
 		}
 		else if (groundcheck.grounded) {
 			maxSpeedAdjusted = maxRunSpeed * direction;
