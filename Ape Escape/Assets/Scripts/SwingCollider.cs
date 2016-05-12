@@ -15,7 +15,6 @@ public class SwingCollider : MonoBehaviour {
 	{
         if (collider.gameObject.layer == 9 && attach == false) 
 		{
-            //swing.current_rope_id = collider.transform.root.GetInstanceID();
             swing.xPos = collider.gameObject.GetComponent<Rigidbody2D>().position.x;
             swing.hinge.connectedBody = collider.gameObject.GetComponent<Rigidbody2D>();
             swing.baseLink.connectedBody = collider.transform.parent.GetComponent<Rigidbody2D>();
@@ -30,7 +29,6 @@ public class SwingCollider : MonoBehaviour {
 		{
 			swing.xPos = 0;
 			attach = false;
-            //swing.current_rope_id = 0;
 
         }
 	}

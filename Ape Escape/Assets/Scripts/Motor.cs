@@ -16,9 +16,9 @@ public class Motor : MonoBehaviour {
 	public float swingJumpForce = 7;
 	public float groundedAcceleration = 1f;
 	public float airborneAcceleration = 0.5f;
-	public float swingingAcceleration = 9f;
+	public float swingingAcceleration = 15f;
 	public float maxRunSpeed = 9f;
-	public float maxSwingSpeed = 9f;
+	public float maxSwingSpeed = 15f;
 
 	public bool facingRight = true;
 
@@ -46,7 +46,15 @@ public class Motor : MonoBehaviour {
 
 		if (swingCollider.attach) 
 		{
-			velocityDelta = direction * swingingAcceleration;
+			float average_angle = (swingCollider.swing.hinge.jointAngle + -swingCollider.swing.connected_hinge.jointAngle) / 2;
+			float accel = (swingingAcceleration * 10) - (Mathf.Abs(average_angle) * 3);
+			if (Mathf.Sign (rb.velocity.x) != Mathf.Sign (direction)) {
+				accel = 0;//accel - (Mathf.Abs(average_angle) * 2);
+			} else
+				accel += 1;
+			if (accel < 0)
+				accel = 0;
+			velocityDelta = direction * accel;
 			maxSpeedAdjusted = maxSwingSpeed * direction;
 		}
 		else if (groundcheck.grounded) {

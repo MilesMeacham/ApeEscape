@@ -274,10 +274,10 @@ HingeJoint2D:
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -70
-    m_UpperAngle: 70
+    m_LowerAngle: -90
+    m_UpperAngle: 90
 --- !u!23 &141381201
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -798,10 +798,10 @@ HingeJoint2D:
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -70
-    m_UpperAngle: 70
+    m_LowerAngle: -90
+    m_UpperAngle: 90
 --- !u!50 &287332973
 Rigidbody2D:
   serializedVersion: 2
@@ -2857,9 +2857,9 @@ MonoBehaviour:
   swingJumpForce: 7
   groundedAcceleration: 1
   airborneAcceleration: 0.5
-  swingingAcceleration: 9
+  swingingAcceleration: 15
   maxRunSpeed: 9
-  maxSwingSpeed: 9
+  maxSwingSpeed: 15
   facingRight: 1
 --- !u!50 &733323321
 Rigidbody2D:
@@ -2971,6 +2971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hinge: {fileID: 0}
+  connected_hinge: {fileID: 0}
   baseLink: {fileID: 0}
   swingBoxCollider: {fileID: 1631871041}
   swingCollider: {fileID: 1631871040}
@@ -3837,10 +3838,10 @@ HingeJoint2D:
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -70
-    m_UpperAngle: 70
+    m_LowerAngle: -90
+    m_UpperAngle: 90
 --- !u!23 &1029555456
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4608,10 +4609,10 @@ HingeJoint2D:
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -30
-    m_UpperAngle: 30
+    m_LowerAngle: -90
+    m_UpperAngle: 90
 --- !u!23 &1218946263
 MeshRenderer:
   m_ObjectHideFlags: 0

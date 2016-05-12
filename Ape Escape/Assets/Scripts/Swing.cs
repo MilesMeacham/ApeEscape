@@ -6,6 +6,8 @@ public class Swing : MonoBehaviour {
 	[HideInInspector]
 	public HingeJoint2D hinge;
 	[HideInInspector]
+	public HingeJoint2D connected_hinge;
+	[HideInInspector]
 	public DistanceJoint2D baseLink;
 	public BoxCollider2D swingBoxCollider;
 	public SwingCollider swingCollider;
@@ -50,7 +52,7 @@ public class Swing : MonoBehaviour {
 			hinge.enabled = true;
 			baseLink.enabled = true;
 		
-			motor.RawHorizontal ((Mathf.Sign (rb.velocity.x) * Mathf.Abs(rb.velocity.y)) * 3);
+			motor.RawHorizontal ((Mathf.Sign (rb.velocity.x) * Mathf.Abs(rb.velocity.y)) * 2);
 		} 
 
 	}
@@ -86,8 +88,10 @@ public class Swing : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider)
 	{
-		if(collider.gameObject.layer == 9)
+		if(collider.gameObject.layer == 9){
 			current_rope_id = collider.transform.root.GetInstanceID();
+			connected_hinge = collider.transform.root.GetComponentInChildren<HingeJoint2D> ();
+		}
 	}
 
 
