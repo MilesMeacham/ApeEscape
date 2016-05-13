@@ -3757,9 +3757,9 @@ MonoBehaviour:
   swingJumpForce: 7
   groundedAcceleration: 1
   airborneAcceleration: 0.5
-  swingingAcceleration: 10
+  swingingAcceleration: 0.002
   maxRunSpeed: 9
-  maxSwingSpeed: 17
+  maxSwingSpeed: 15
   facingRight: 1
 --- !u!50 &733323321
 Rigidbody2D:
