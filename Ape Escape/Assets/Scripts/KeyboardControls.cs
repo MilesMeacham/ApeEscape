@@ -35,13 +35,13 @@ public class KeyboardControls : MonoBehaviour {
 			jump.Jump ();
 
 		// SWING STUFF
-		if (Input.GetKeyDown (KeyCode.F))
+		if (Input.GetKeyDown (KeyCode.M))
 			swing.SwingAttach ();
 
-        if (Input.GetKey(KeyCode.F))
+        if (Input.GetKey(KeyCode.M))
 			swing.SwingAttachCheck ();
 
-		if (Input.GetKeyUp (KeyCode.F))
+		if (Input.GetKeyUp (KeyCode.M))
 			swing.SwingDetach ();
 
 

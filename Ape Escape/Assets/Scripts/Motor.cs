@@ -11,6 +11,7 @@ public class Motor : MonoBehaviour {
 	private SwingCollider swingCollider;
 	//private float direction = 1;
 	private Vector3 scale;
+	private Animator animator;
 
 	private float swingingAccelerationModified = 0;
 
@@ -29,10 +30,20 @@ public class Motor : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D> ();
 		groundcheck = GetComponentInChildren<GroundCheck> ();
 		swingCollider = GetComponentInChildren<SwingCollider> ();
+		animator = GetComponentInChildren<Animator> ();
+
 		scale = transform.localScale;
 		swingingAccelerationModified = swingingAcceleration;
+
 	}
 
+
+	void Update ()
+	{
+		// Just sending the absolute value of velocity for now.
+		animator.SetFloat ("speed", Mathf.Abs (rb.velocity.x));
+
+	}
 
 
 	public void Horizontal(float direction)
@@ -88,7 +99,9 @@ public class Motor : MonoBehaviour {
 			
 			rb.velocity = new Vector2 (newVelocity, rb.velocity.y);
 		}
-			
+
+
+
 	}
 
 	public void RawHorizontal(float direction)
