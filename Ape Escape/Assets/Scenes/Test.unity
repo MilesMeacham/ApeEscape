@@ -1736,7 +1736,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &410502915
 Transform:
   m_ObjectHideFlags: 0
@@ -2055,6 +2055,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 435447747}
   - 212: {fileID: 435447748}
+  - 95: {fileID: 435447749}
   m_Layer: 0
   m_Name: Harry
   m_TagString: Untagged
@@ -2104,6 +2105,23 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
+--- !u!95 &435447749
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 435447746}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b651c946d92e29048b3b5a8b44fa8cc3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &439317871
 GameObject:
   m_ObjectHideFlags: 0
@@ -3700,6 +3718,7 @@ GameObject:
   - 50: {fileID: 733323321}
   - 114: {fileID: 733323320}
   - 114: {fileID: 733323319}
+  - 114: {fileID: 733323328}
   - 114: {fileID: 733323324}
   - 233: {fileID: 733323326}
   - 232: {fileID: 733323325}
@@ -3859,6 +3878,17 @@ MonoBehaviour:
   last_attached_id: 0
   current_rope_id: 0
   xPos: 0
+--- !u!114 &733323328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 733323318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe4e5bf7bd774a748b24bcae6a86f164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &764503638
 GameObject:
   m_ObjectHideFlags: 0
