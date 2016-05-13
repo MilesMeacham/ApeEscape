@@ -19,7 +19,7 @@ public class Motor : MonoBehaviour {
 	public float swingJumpForce = 7;
 	public float groundedAcceleration = 1f;
 	public float airborneAcceleration = 0.5f;
-	public float swingingAcceleration = 10f;
+	public float swingingAcceleration = 15f;
 	public float maxRunSpeed = 9f;
 	public float maxSwingSpeed = 17f;
 
@@ -41,7 +41,7 @@ public class Motor : MonoBehaviour {
 	void Update ()
 	{
 		// Just sending the absolute value of velocity for now.
-		if(!swingCollider.attach)
+		if(groundcheck.grounded)
 			animator.SetFloat ("speed", Mathf.Abs (rb.velocity.x));
 		else
 			animator.SetFloat ("speed", 0);
@@ -60,6 +60,7 @@ public class Motor : MonoBehaviour {
 
 		float maxSpeedAdjusted;
 		float velocityDelta;
+		float vertical_accel = 0f;
 
 		if (swingCollider.attach) 
 		{
@@ -67,13 +68,23 @@ public class Motor : MonoBehaviour {
 			if (swingingAccelerationModified < 1)
 				swingingAccelerationModified = 1;
 			float average_angle = (swingCollider.swing.hinge.jointAngle + -swingCollider.swing.connected_hinge.jointAngle) / 2;
-			float accel = (swingingAccelerationModified) - (Mathf.Abs(average_angle) * 0.1f);
+			float accel = (swingingAccelerationModified) - (Mathf.Abs(average_angle) * 0.08f);
 			if (Mathf.Sign (rb.velocity.x) != Mathf.Sign (direction)) {
 				accel = 0;//accel - (Mathf.Abs(average_angle) * 2);
 			} else
 				accel += 1;
 			if (accel < 0)
 				accel = 0;
+
+
+			float angle_ratio = 90 / Mathf.Abs (average_angle);
+			vertical_accel = accel / angle_ratio;
+			accel = accel - vertical_accel;
+			if (rb.velocity.y < 0)
+				vertical_accel = -vertical_accel;
+			print (vertical_accel);
+
+
 			velocityDelta = direction * accel;
 			maxSpeedAdjusted = maxSwingSpeed * direction;
 			swingingAccelerationModified = swingingAcceleration;
@@ -87,20 +98,21 @@ public class Motor : MonoBehaviour {
 		}
 		
 		float newVelocity = rb.velocity.x + velocityDelta;
+		float y_velocity = rb.velocity.y + vertical_accel;
 
 		if (direction < 0 && rb.velocity.x > maxSpeedAdjusted) 
 		{
 			if (newVelocity < maxSpeedAdjusted)
 				newVelocity = maxSpeedAdjusted;
 			
-			rb.velocity = new Vector2 (newVelocity, rb.velocity.y);
+			rb.velocity = new Vector2 (newVelocity, y_velocity);
 		} 
 		else if (direction > 0 && rb.velocity.x < maxSpeedAdjusted) 
 		{
 			if (newVelocity > maxSpeedAdjusted)
 				newVelocity = maxSpeedAdjusted;
 			
-			rb.velocity = new Vector2 (newVelocity, rb.velocity.y);
+			rb.velocity = new Vector2 (newVelocity, y_velocity);
 		}
 
 
