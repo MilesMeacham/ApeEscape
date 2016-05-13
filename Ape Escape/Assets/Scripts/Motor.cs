@@ -41,7 +41,10 @@ public class Motor : MonoBehaviour {
 	void Update ()
 	{
 		// Just sending the absolute value of velocity for now.
-		animator.SetFloat ("speed", Mathf.Abs (rb.velocity.x));
+		if(!swingCollider.attach)
+			animator.SetFloat ("speed", Mathf.Abs (rb.velocity.x));
+		else
+			animator.SetFloat ("speed", 0);
 
 	}
 
