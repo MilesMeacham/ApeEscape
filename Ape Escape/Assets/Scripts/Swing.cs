@@ -53,10 +53,10 @@ public class Swing : MonoBehaviour {
 			baseLink.enabled = true;
 		
 			float boost = rb.velocity.x;
-			if(rb.velocity.y > 0)
-			 	boost += (rb.velocity.y);
+			if(rb.velocity.y < 0)
+				boost += (Mathf.Abs(rb.velocity.y));
 			if (Mathf.Abs (boost) < 2)
-				boost = Mathf.Sign (boost) * 2;
+				boost = Mathf.Sign (boost) * 3;
 			motor.RawHorizontal (boost);
 		} 
 
