@@ -17,8 +17,6 @@ public class Swing : MonoBehaviour {
     public int current_rope_id;
 	public float boostMultiplier = 1.5f;
 
-	private bool attach = false;
-
 	[HideInInspector]
 	public float xPos = 0;
 

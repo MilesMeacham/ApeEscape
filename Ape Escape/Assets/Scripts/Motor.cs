@@ -8,6 +8,7 @@ public class Motor : MonoBehaviour {
 	[HideInInspector]
 	public Rigidbody2D rb;
 	private GroundCheck groundcheck;
+	private BlockedCheck blockedcheck;
 	private SwingCollider swingCollider;
 	//private float direction = 1;
 	private Vector3 scale;
@@ -29,6 +30,7 @@ public class Motor : MonoBehaviour {
 	{
 		rb = GetComponent<Rigidbody2D> ();
 		groundcheck = GetComponentInChildren<GroundCheck> ();
+		blockedcheck = GetComponentInChildren<BlockedCheck> ();
 		swingCollider = GetComponentInChildren<SwingCollider> ();
 		animator = GetComponentInChildren<Animator> ();
 
@@ -90,8 +92,14 @@ public class Motor : MonoBehaviour {
 			maxSpeedAdjusted = maxRunSpeed * direction;
 			velocityDelta = direction * groundedAcceleration;
 		} else {
-			maxSpeedAdjusted = maxRunSpeed * direction;
-			velocityDelta = direction * airborneAcceleration;
+			if (!blockedcheck.blocked) {
+				maxSpeedAdjusted = maxRunSpeed * direction;
+				velocityDelta = direction * airborneAcceleration;
+			} else {
+				maxSpeedAdjusted = 0;
+				velocityDelta = 0;
+			}
+				
 		}
 		
 		float newVelocity = rb.velocity.x + velocityDelta;
