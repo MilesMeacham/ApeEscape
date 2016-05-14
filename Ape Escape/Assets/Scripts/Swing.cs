@@ -64,18 +64,14 @@ public class Swing : MonoBehaviour {
 
 	public void SwingDetach ()
 	{
-            if (hinge.enabled)
-            {
-                last_attached_id = current_rope_id;
-            }
-			swingBoxCollider.gameObject.SetActive (false);
-			hinge.enabled = false;
-			baseLink.enabled = false;
-			swingCollider.attach = false;
-	
-
-		if (!swingDetachDelay)
-			StartCoroutine(SwingDetachDelayCO());
+		if (swingCollider.attach && !swingDetachDelay)
+			StartCoroutine (SwingDetachDelayCO ());
+        if (hinge.enabled)
+            last_attached_id = current_rope_id;
+		swingBoxCollider.gameObject.SetActive (false);
+		hinge.enabled = false;
+		baseLink.enabled = false;
+		swingCollider.attach = false;
 
 	}
 
