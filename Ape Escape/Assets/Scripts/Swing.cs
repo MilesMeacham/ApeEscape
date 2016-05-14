@@ -43,8 +43,6 @@ public class Swing : MonoBehaviour {
 	{
 		if (swingBoxCollider.gameObject.activeSelf == false && (swingDetachDelay == false || last_attached_id != current_rope_id))
 			swingBoxCollider.gameObject.SetActive(true);
-		else
-			print (last_attached_id);
 
         if (swingCollider.attach == true && hinge.enabled != true) 
         {
@@ -94,7 +92,7 @@ public class Swing : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collider)
 	{
 		if(collider.gameObject.layer == 9){
-			current_rope_id = collider.transform.root.GetInstanceID();
+			current_rope_id = collider.transform.parent.parent.GetInstanceID();
 			connected_hinge = collider.transform.root.GetComponentInChildren<HingeJoint2D> ();
 		}
 	}
