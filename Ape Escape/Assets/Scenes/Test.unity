@@ -1897,7 +1897,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.2, y: 1.5}
 --- !u!1 &432652271
 GameObject:
   m_ObjectHideFlags: 0
@@ -3853,7 +3853,7 @@ MonoBehaviour:
   jumpForce: 9
   swingJumpForce: 7
   groundedAcceleration: 1
-  airborneAcceleration: 0.5
+  airborneAcceleration: 0.25
   swingingAcceleration: 0.002
   maxRunSpeed: 9
   maxSwingSpeed: 15
