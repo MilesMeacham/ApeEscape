@@ -37,7 +37,8 @@ public class Swing : MonoBehaviour {
 
 	public void SwingAttach ()
 	{
-        swingBoxCollider.gameObject.SetActive(true);
+		if (swingBoxCollider.gameObject.active == false && (swingDetachDelay == false || last_attached_id != current_rope_id))
+        	swingBoxCollider.gameObject.SetActive(true);
 	}
 
 	public void SwingAttachCheck ()
@@ -98,6 +99,13 @@ public class Swing : MonoBehaviour {
 			current_rope_id = collider.transform.root.GetInstanceID();
 			connected_hinge = collider.transform.root.GetComponentInChildren<HingeJoint2D> ();
 		}
+	}
+
+	void OnTriggerStay2D(Collider2D collider)
+	{
+		//if(collider.gameObject.layer == 9){
+		//	current_rope_id = collider.transform.root.GetInstanceID();
+		//}
 	}
 
 
