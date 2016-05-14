@@ -15,12 +15,12 @@ public class Swing : MonoBehaviour {
 	private Rigidbody2D rb;
 	private Motor motor;
     public int current_rope_id;
+	public float boostMultiplier = 1.5f;
 
 	private bool attach = false;
 
 	[HideInInspector]
 	public float xPos = 0;
-
 
 	private float swingDelay = 0.5f;
 	private bool swingDetachDelay = false;
@@ -54,9 +54,10 @@ public class Swing : MonoBehaviour {
 		
 			float boost = rb.velocity.x;
 			if(rb.velocity.y < 0)
-				boost += (Mathf.Abs(rb.velocity.y));
+				boost += (Mathf.Abs(rb.velocity.y) * Mathf.Sign(rb.velocity.x));
 			if (Mathf.Abs (boost) < 2)
-				boost = Mathf.Sign (boost) * 3;
+				boost = Mathf.Sign (boost) * 2;
+			boost *= boostMultiplier;
 			motor.RawHorizontal (boost);
 		} 
 

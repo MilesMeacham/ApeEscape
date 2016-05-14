@@ -69,21 +69,18 @@ public class Motor : MonoBehaviour {
 				swingingAccelerationModified = swingingAcceleration;
 			float average_angle = (swingCollider.swing.hinge.jointAngle + -swingCollider.swing.connected_hinge.jointAngle) / 2;
 			float accel = (swingingAccelerationModified);// - (Mathf.Abs(average_angle) * 0.08f);
-			if (Mathf.Sign (rb.velocity.x) != Mathf.Sign (direction)) {
+			if (Mathf.Sign (rb.velocity.x) != Mathf.Sign (direction)  || Mathf.Abs(average_angle) >= 90) {
 				accel = 0;//accel - (Mathf.Abs(average_angle) * 2);
 			} else
 				accel += 1;
 			if (accel < 0)
 				accel = 0;
 
-
 			float angle_ratio = 90 / Mathf.Abs (average_angle);
 			vertical_accel = accel / angle_ratio;
 			accel = accel - vertical_accel;
 			if (rb.velocity.y < 0)
 				vertical_accel = -vertical_accel;
-			print (vertical_accel);
-
 
 			velocityDelta = direction * accel;
 			maxSpeedAdjusted = maxSwingSpeed * direction;
