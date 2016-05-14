@@ -9,8 +9,6 @@ public class GameManager : MonoBehaviour {
 	public float respawnDelay = 1f;
 
 
-
-	// Use this for initialization
 	void Start () 
 	{
 		player = GameObject.FindWithTag ("Player");
