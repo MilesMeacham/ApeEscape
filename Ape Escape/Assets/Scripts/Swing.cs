@@ -35,14 +35,16 @@ public class Swing : MonoBehaviour {
 
 	public void SwingAttach ()
 	{
-		if (swingBoxCollider.gameObject.active == false && (swingDetachDelay == false || last_attached_id != current_rope_id))
-        	swingBoxCollider.gameObject.SetActive(true);
+		if (swingBoxCollider.gameObject.activeSelf == false && (swingDetachDelay == false || last_attached_id != current_rope_id))
+			swingBoxCollider.gameObject.SetActive (true);
 	}
 
 	public void SwingAttachCheck ()
 	{
-		if (swingBoxCollider.gameObject.active == false && (swingDetachDelay == false || last_attached_id != current_rope_id))
+		if (swingBoxCollider.gameObject.activeSelf == false && (swingDetachDelay == false || last_attached_id != current_rope_id))
 			swingBoxCollider.gameObject.SetActive(true);
+		else
+			print (last_attached_id);
 
         if (swingCollider.attach == true && hinge.enabled != true) 
         {
@@ -68,10 +70,12 @@ public class Swing : MonoBehaviour {
 			StartCoroutine (SwingDetachDelayCO ());
         if (hinge.enabled)
             last_attached_id = current_rope_id;
-		swingBoxCollider.gameObject.SetActive (false);
-		hinge.enabled = false;
-		baseLink.enabled = false;
-		swingCollider.attach = false;
+		if (swingCollider.attach) {
+			swingBoxCollider.gameObject.SetActive (false);
+			hinge.enabled = false;
+			baseLink.enabled = false;
+			swingCollider.attach = false;
+		}
 
 	}
 
