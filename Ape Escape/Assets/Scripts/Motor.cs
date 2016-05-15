@@ -23,8 +23,10 @@ public class Motor : MonoBehaviour {
 	public float swingingAcceleration = 0.002f;
 	public float maxRunSpeed = 9f;
 	public float maxSwingSpeed = 15f;
+	public float mudSlow = 4;
 
 	public bool facingRight = true;
+	public bool mudded = false;
 
 	void Start () 
 	{
@@ -64,6 +66,7 @@ public class Motor : MonoBehaviour {
 		float velocityDelta;
 		float vertical_accel = 0f;
 
+		// SWING
 		if (swingCollider.attach) 
 		{
 			float swingingAccelerationModified = (Mathf.Abs (rb.velocity.x) + Mathf.Abs (rb.velocity.y)) * swingingAcceleration;
@@ -104,6 +107,10 @@ public class Motor : MonoBehaviour {
 		
 		float newVelocity = rb.velocity.x + velocityDelta;
 		float y_velocity = rb.velocity.y + vertical_accel;
+
+		// MUDDED 
+		if (mudded && maxSpeedAdjusted != (mudSlow * direction))
+			maxSpeedAdjusted = (mudSlow * direction);
 
 		if (direction < 0 && rb.velocity.x > maxSpeedAdjusted) 
 		{

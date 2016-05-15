@@ -4,6 +4,7 @@ using System.Collections;
 public class TriggerDetection : MonoBehaviour {
 
 	private GameManager gameManager;
+	private Motor motor;
 
 	void Start ()
 	{
@@ -11,6 +12,7 @@ public class TriggerDetection : MonoBehaviour {
 		// FYI it is not always great to use this method. It has to look through many gameobjects when the scene gets big
 		gameManager = FindObjectOfType<GameManager> ();
 
+		motor = GetComponent<Motor> ();
 	}
 
 
@@ -19,7 +21,16 @@ public class TriggerDetection : MonoBehaviour {
 		if (collider.gameObject.layer == 10)
 			gameManager.RespawnPlayer ();
 
+		if (collider.gameObject.tag == "Mud")
+			motor.mudded = true;
 
 	}
 
+	void OnTriggerExit2D (Collider2D collider)
+	{
+		if (collider.gameObject.tag == "Mud")
+			motor.mudded = false;
+
+
+	}
 }
