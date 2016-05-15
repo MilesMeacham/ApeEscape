@@ -2770,6 +2770,62 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1218946259}
   m_RootOrder: 3
+--- !u!1 &517377358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 517377361}
+  - 61: {fileID: 517377359}
+  - 114: {fileID: 517377360}
+  m_Layer: 0
+  m_Name: ClimbBoxCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &517377359
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 517377358}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: -0.8, y: 0.21747059}
+  serializedVersion: 2
+  m_Size: {x: 1.7, y: 2.4349408}
+--- !u!114 &517377360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 517377358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 594d4b9248dd6c04d9c97da7c1a52546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attach: 0
+  climb: {fileID: 733323330}
+--- !u!4 &517377361
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 517377358}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.2000003, y: 0.20000005, z: 0}
+  m_LocalScale: {x: 0.9067035, y: 0.42468697, z: 1}
+  m_Children: []
+  m_Father: {fileID: 733323323}
+  m_RootOrder: 4
 --- !u!1 &521125443
 GameObject:
   m_ObjectHideFlags: 0
@@ -3976,6 +4032,7 @@ GameObject:
   - 232: {fileID: 733323325}
   - 114: {fileID: 733323327}
   - 114: {fileID: 733323329}
+  - 114: {fileID: 733323330}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4059,6 +4116,7 @@ Transform:
   - {fileID: 426316775}
   - {fileID: 1631871039}
   - {fileID: 240044153}
+  - {fileID: 517377361}
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!114 &733323324
@@ -4133,6 +4191,7 @@ MonoBehaviour:
   current_rope_id: 0
   boostMultiplier: 1.5
   xPos: 0
+  climbing: 0
 --- !u!114 &733323328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4155,6 +4214,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c3c5f9545a6054b947398b67479b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &733323330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 733323318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adae3a80a102d994b8d9adacda39514e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  climbBoxCollider: {fileID: 517377359}
+  climbCollider: {fileID: 517377360}
+  current_rope_id: 0
+  climb_speed: 3
+  xPos: 0
+  climbing: 0
 --- !u!1 &764503638
 GameObject:
   m_ObjectHideFlags: 0

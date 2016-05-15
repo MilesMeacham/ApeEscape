@@ -9,6 +9,7 @@ public class KeyboardControls : MonoBehaviour {
 	private Motor motor;
 	private CharacterJump jump;
 	private Swing swing;
+	private Climb climb;
 	private float stop = 0;
 
 
@@ -17,6 +18,7 @@ public class KeyboardControls : MonoBehaviour {
 		motor = GetComponent<Motor> ();
 		jump = GetComponent<CharacterJump> ();
 		swing = GetComponent<Swing> ();
+		climb = GetComponent<Climb> ();
 	}
 
 	// Called Every Frame. Use for Jumping and Shooting (Not Movement)
@@ -45,10 +47,10 @@ public class KeyboardControls : MonoBehaviour {
 			swing.SwingDetach ();
 
 		if (Input.GetKeyUp (KeyCode.W))
-			swing.stopClimb ();
+			climb.ClimbDetach ();
 
 		if (Input.GetKeyUp (KeyCode.S))
-			swing.stopClimb ();
+			climb.ClimbDetach ();
 
 	}
 
@@ -64,10 +66,10 @@ public class KeyboardControls : MonoBehaviour {
 			motor.Horizontal (-1);
 
 		if (Input.GetKey (KeyCode.W))
-			swing.climb (0.5f);
+			climb.ClimbInDirection (1f);
 
 		if (Input.GetKey (KeyCode.S))
-			swing.climb (-0.1f);
+			climb.ClimbInDirection (-1f);
 
 	}
 }

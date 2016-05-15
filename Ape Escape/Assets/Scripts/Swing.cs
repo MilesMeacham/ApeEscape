@@ -22,7 +22,8 @@ public class Swing : MonoBehaviour {
 
 	private float swingDelay = 0.5f;
 	private bool swingDetachDelay = false;
-	private bool climbing = false;
+	[HideInInspector]
+	public bool climbing = false;
 
 
 	void Start ()
@@ -67,7 +68,7 @@ public class Swing : MonoBehaviour {
 
 	public void SwingDetach ()
 	{
-		if (swingCollider.attach && !swingDetachDelay)
+		if (swingCollider.attach && !swingDetachDelay && !climbing)
 			StartCoroutine (SwingDetachDelayCO ());
         if (hinge.enabled)
             last_attached_id = current_rope_id;
@@ -76,6 +77,7 @@ public class Swing : MonoBehaviour {
 			hinge.enabled = false;
 			baseLink.enabled = false;
 			swingCollider.attach = false;
+			climbing = false;
 		}
 
 	}
@@ -105,20 +107,6 @@ public class Swing : MonoBehaviour {
 		//if(collider.gameObject.layer == 9){
 		//	current_rope_id = collider.transform.root.GetInstanceID();
 		//}
-	}
-
-	public void climb(float new_position = 0f)
-	{
-		if(swingCollider.attach){
-			SwingDetach();
-			rb.position = new Vector2 (rb.position.x, rb.position.y + new_position);
-			climbing = true;
-		}
-	}
-
-	public void stopClimb()
-	{
-		climbing = false;
 	}
 
 
