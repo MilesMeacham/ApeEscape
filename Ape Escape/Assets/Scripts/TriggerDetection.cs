@@ -24,6 +24,9 @@ public class TriggerDetection : MonoBehaviour {
 		if (collider.gameObject.tag == "Mud")
 			motor.mudded = true;
 
+		if (collider.gameObject.tag == "Water")
+			motor.inWater = true;
+
 	}
 
 	void OnTriggerExit2D (Collider2D collider)
@@ -31,6 +34,8 @@ public class TriggerDetection : MonoBehaviour {
 		if (collider.gameObject.tag == "Mud")
 			motor.mudded = false;
 
+		if (collider.gameObject.tag == "Water")
+			motor.inWater = false;
 
 	}
 }

@@ -5,8 +5,8 @@ using UnityEngine;
 using System.Collections;
 
 public class Motor : MonoBehaviour {
-	[HideInInspector]
-	public Rigidbody2D rb;
+	
+	[HideInInspector] public Rigidbody2D rb;
 	private GroundCheck groundcheck;
 	private BlockedCheck blockedcheck;
 	private SwingCollider swingCollider;
@@ -24,9 +24,11 @@ public class Motor : MonoBehaviour {
 	public float maxRunSpeed = 9f;
 	public float maxSwingSpeed = 15f;
 	public float mudSlow = 4;
+	public float waterSlow = 1.3f;
 
-	public bool facingRight = true;
-	public bool mudded = false;
+	[HideInInspector] public bool facingRight = true;
+	[HideInInspector] public bool mudded = false;
+	[HideInInspector] public bool inWater = false;
 
 	void Start () 
 	{
@@ -111,6 +113,13 @@ public class Motor : MonoBehaviour {
 		// MUDDED 
 		if (mudded && maxSpeedAdjusted != (mudSlow * direction))
 			maxSpeedAdjusted = (mudSlow * direction);
+
+		// IN WATER
+		if (inWater) 
+		{
+			rb.velocity = new Vector2 (rb.velocity.x / waterSlow, rb.velocity.y / waterSlow);
+
+		}
 
 		if (direction < 0 && rb.velocity.x > maxSpeedAdjusted) 
 		{
