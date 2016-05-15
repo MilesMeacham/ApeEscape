@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour {
 
 		yield return new WaitForSeconds(respawnDelay);
 
+		player.GetComponent<Motor> ().inWater = false;
 		player.transform.position = checkpoint.transform.position;
 		player.GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, 0);
 		player.SetActive (true);
