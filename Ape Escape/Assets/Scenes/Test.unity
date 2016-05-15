@@ -639,7 +639,7 @@ GameObject:
   - 4: {fileID: 160854412}
   - 33: {fileID: 160854414}
   - 23: {fileID: 160854413}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4708,7 +4708,7 @@ GameObject:
   - 114: {fileID: 733323327}
   - 114: {fileID: 733323329}
   - 114: {fileID: 733323330}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -10341,7 +10341,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1554598765}
   - 61: {fileID: 1554598764}
-  m_Layer: 0
+  - 114: {fileID: 1554598766}
+  m_Layer: 11
   m_Name: Mud
   m_TagString: Mud
   m_Icon: {fileID: 0}
@@ -10375,6 +10376,19 @@ Transform:
   - {fileID: 1825004290}
   m_Father: {fileID: 0}
   m_RootOrder: 11
+--- !u!114 &1554598766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1554598763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c12cc2ff9535b22438d5121be19d63f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mudParticle: {fileID: 184088, guid: fb2b1000a36b4b0438dc636a73f66a4a, type: 2}
+  splashDelayTime: 0.5
 --- !u!1 &1568290145
 GameObject:
   m_ObjectHideFlags: 0
@@ -11876,7 +11890,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1825004290}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
