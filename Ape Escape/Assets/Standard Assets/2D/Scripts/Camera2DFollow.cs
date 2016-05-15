@@ -10,7 +10,8 @@ namespace UnityStandardAssets._2D
         public float lookAheadFactor = 3;
         public float lookAheadReturnSpeed = 0.5f;
         public float lookAheadMoveThreshold = 0.1f;
-		public float yOffset = 4f;
+		public float yOffset = 3f;
+		public float yMaxDifference = -4f;
 
         private float m_OffsetZ;
         private Vector3 m_LastTargetPosition;
@@ -34,14 +35,19 @@ namespace UnityStandardAssets._2D
 
             bool updateLookAheadTarget = Mathf.Abs(xMoveDelta) > lookAheadMoveThreshold;
 
+			float yDistance = (target.position - transform.position).y;
+
+			if (Mathf.Abs(yDistance) > yMaxDifference) {
+				transform.position = new Vector3 (transform.position.x, target.position.y + yMaxDifference, m_OffsetZ);
+
+				print ("yoffset");
+			}
+
             if (updateLookAheadTarget)
-            {
                 m_LookAheadPos = lookAheadFactor*Vector3.right*Mathf.Sign(xMoveDelta);
-            }
             else
-            {
                 m_LookAheadPos = Vector3.MoveTowards(m_LookAheadPos, Vector3.zero, Time.deltaTime*lookAheadReturnSpeed);
-            }
+
 
             Vector3 aheadTargetPos = target.position + m_LookAheadPos + Vector3.forward*m_OffsetZ;
 			aheadTargetPos.y += yOffset;
