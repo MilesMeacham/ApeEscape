@@ -22,6 +22,7 @@ public class Swing : MonoBehaviour {
 
 	private float swingDelay = 0.5f;
 	private bool swingDetachDelay = false;
+	private bool climbing = false;
 
 
 	void Start ()
@@ -41,7 +42,7 @@ public class Swing : MonoBehaviour {
 
 	public void SwingAttachCheck ()
 	{
-		if (swingBoxCollider.gameObject.activeSelf == false && (swingDetachDelay == false || last_attached_id != current_rope_id))
+		if (swingBoxCollider.gameObject.activeSelf == false && (swingDetachDelay == false || climbing || last_attached_id != current_rope_id))
 			swingBoxCollider.gameObject.SetActive(true);
 
         if (swingCollider.attach == true && hinge.enabled != true) 
@@ -51,13 +52,15 @@ public class Swing : MonoBehaviour {
 			hinge.enabled = true;
 			baseLink.enabled = true;
 		
-			float boost = rb.velocity.x;
-			if(rb.velocity.y < 0)
-				boost += (Mathf.Abs(rb.velocity.y) * Mathf.Sign(rb.velocity.x));
-			if (Mathf.Abs (boost) < 2)
-				boost = Mathf.Sign (boost) * 2;
-			boost *= boostMultiplier;
-			motor.RawHorizontal (boost);
+			if (!climbing) {
+				float boost = rb.velocity.x;
+				if (rb.velocity.y < 0)
+					boost += (Mathf.Abs (rb.velocity.y) * Mathf.Sign (rb.velocity.x));
+				if (Mathf.Abs (boost) < 2)
+					boost = Mathf.Sign (boost) * 2;
+				boost *= boostMultiplier;
+				motor.RawHorizontal (boost);
+			} 
 		} 
 
 	}
@@ -102,6 +105,20 @@ public class Swing : MonoBehaviour {
 		//if(collider.gameObject.layer == 9){
 		//	current_rope_id = collider.transform.root.GetInstanceID();
 		//}
+	}
+
+	public void climb(float new_position = 0f)
+	{
+		if(swingCollider.attach){
+			SwingDetach();
+			rb.position = new Vector2 (rb.position.x, rb.position.y + new_position);
+			climbing = true;
+		}
+	}
+
+	public void stopClimb()
+	{
+		climbing = false;
 	}
 
 

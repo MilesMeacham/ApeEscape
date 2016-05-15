@@ -44,6 +44,11 @@ public class KeyboardControls : MonoBehaviour {
 		if (Input.GetKeyUp (KeyCode.M))
 			swing.SwingDetach ();
 
+		if (Input.GetKeyUp (KeyCode.W))
+			swing.stopClimb ();
+
+		if (Input.GetKeyUp (KeyCode.S))
+			swing.stopClimb ();
 
 	}
 
@@ -58,7 +63,11 @@ public class KeyboardControls : MonoBehaviour {
 		if (Input.GetKey (KeyCode.A))
 			motor.Horizontal (-1);
 
+		if (Input.GetKey (KeyCode.W))
+			swing.climb (0.5f);
 
+		if (Input.GetKey (KeyCode.S))
+			swing.climb (-0.1f);
 
 	}
 }

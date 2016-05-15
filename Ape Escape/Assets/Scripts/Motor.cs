@@ -119,9 +119,7 @@ public class Motor : MonoBehaviour {
 			
 			rb.velocity = new Vector2 (newVelocity, y_velocity);
 		}
-
-
-
+			
 	}
 
 	public void RawHorizontal(float direction)
@@ -153,9 +151,6 @@ public class Motor : MonoBehaviour {
 		transform.localScale = scale;
 
 	}
-
-
-
 
 
 }
