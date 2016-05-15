@@ -212,8 +212,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 19731176}
-  - 61: {fileID: 19731175}
+  - 61: {fileID: 19731178}
   - 114: {fileID: 19731174}
+  - 61: {fileID: 19731175}
   - 253: {fileID: 19731177}
   m_Layer: 11
   m_Name: Water
@@ -281,6 +282,20 @@ BuoyancyEffector2D:
   m_FlowAngle: 0
   m_FlowMagnitude: 0
   m_FlowVariation: 0
+--- !u!61 &19731178
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 19731173}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
 --- !u!1 &49415119
 GameObject:
   m_ObjectHideFlags: 0
