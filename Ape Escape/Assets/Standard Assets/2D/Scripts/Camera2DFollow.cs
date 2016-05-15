@@ -37,11 +37,9 @@ namespace UnityStandardAssets._2D
 
 			float yDistance = (target.position - transform.position).y;
 
-			if (Mathf.Abs(yDistance) > yMaxDifference) {
+			if (Mathf.Abs(yDistance) > yMaxDifference)
 				transform.position = new Vector3 (transform.position.x, target.position.y + yMaxDifference, m_OffsetZ);
-
-				print ("yoffset");
-			}
+	
 
             if (updateLookAheadTarget)
                 m_LookAheadPos = lookAheadFactor*Vector3.right*Mathf.Sign(xMoveDelta);
