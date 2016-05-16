@@ -7,7 +7,8 @@ public class Parallax : MonoBehaviour {
 
 	public Transform[] backgrounds;
 	private float[] parallaxScales;
-	public float smoothing;
+	public float xSmoothing;
+	public float ySmoothing;
 
 	private Vector3 prevCamPos;
 
@@ -29,9 +30,11 @@ public class Parallax : MonoBehaviour {
 	{
 		for (int i = 0; i < backgrounds.Length; i++) 
 		{
-			Vector3 parallax = (prevCamPos - transform.position) * (parallaxScales[i] / smoothing);
+			float xParallax = (prevCamPos - transform.position).x * (parallaxScales[i] / xSmoothing);
 
-			backgrounds[i].position = new Vector3 (backgrounds[i].position.x + parallax.x, backgrounds[i].position.y + parallax.y, backgrounds[i].position.z);
+			float yParallax = (prevCamPos - transform.position).y * (parallaxScales[i] / ySmoothing);
+
+			backgrounds[i].position = new Vector3 (backgrounds[i].position.x + xParallax, backgrounds[i].position.y + yParallax, backgrounds[i].position.z);
 		}
 
 		prevCamPos = transform.position;
