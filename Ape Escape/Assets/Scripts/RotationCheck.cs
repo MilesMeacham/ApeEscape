@@ -73,7 +73,7 @@ public class RotationCheck : MonoBehaviour {
 				colliders.Remove(collider);
 			if (dontRotate) {
 				StartCoroutine (ExitDelayCO ());
-			} else {
+			} else if(!groundcheck.grounded && !collided) {
 				transform.parent.transform.rotation = Quaternion.Euler (0, 0, 0);
 			}
 		}
@@ -84,7 +84,8 @@ public class RotationCheck : MonoBehaviour {
 		while (dontRotate == false) {
 			yield return null;
 		}
-		transform.parent.transform.rotation = Quaternion.Euler (0, 0, 0);
+		if(!groundcheck.grounded && !collided)
+			transform.parent.transform.rotation = Quaternion.Euler (0, 0, 0);
 	}
 
 	public void Reset()
