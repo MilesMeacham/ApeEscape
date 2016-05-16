@@ -23,7 +23,7 @@ public class Splash : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collider)
 	{
 
-		Instantiate (splashParticle, new Vector2(player.GetComponent<Rigidbody2D>().position.x, player.GetComponent<Rigidbody2D>().position.y - 0.5f), splashParticle.transform.rotation);
+		Instantiate (splashParticle, new Vector2(collider.GetComponent<Rigidbody2D>().position.x, collider.GetComponent<Rigidbody2D>().position.y - 0.5f), splashParticle.transform.rotation);
 
 	}
 
