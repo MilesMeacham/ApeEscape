@@ -8,7 +8,7 @@ using System.Collections.Generic;
 public class RotationCheck : MonoBehaviour {
 
 	private GroundCheck groundcheck;
-	public float rotateDelay = 0.1f;
+	public float rotateDelay = 0.3f;
 	public bool collided = false;
 	private bool dontRotate = false;
 
@@ -47,20 +47,19 @@ public class RotationCheck : MonoBehaviour {
 		if (collider.gameObject.layer == 8) {
 			collided = true;
 			if (dontRotate == false) {
-				var original_euler = collider.transform.rotation.eulerAngles;
-				var euler = original_euler;
+				var original_euler = transform.parent.transform.rotation.eulerAngles;
+				var new_euler = collider.transform.rotation.eulerAngles;
+				var euler = new_euler;
 				foreach (Collider2D checking_collider in colliders) {
 					var checking_euler = checking_collider.transform.rotation.eulerAngles;
 					if (checking_euler.z == 0) {
 						euler = checking_euler;
 					}
 				}
-				//if (euler.z != original_euler.z) {
+				if (original_euler.z != euler.z) {
+					StartCoroutine (RotateDelayCO ());
 					transform.parent.transform.rotation = Quaternion.Euler (0, 0, -euler.z);
-					if (euler.z != 0) {
-						StartCoroutine (RotateDelayCO ());
-					}
-				//}
+				}
 			}
 		}
 	}
