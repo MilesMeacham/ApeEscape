@@ -29,7 +29,9 @@ public class GameManager : MonoBehaviour {
 
 		player.GetComponent<Motor> ().inWater = false;
 		player.transform.position = checkpoint.transform.position;
+		player.transform.rotation = Quaternion.Euler (0, 0, 0);
 		player.GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, 0);
+		player.GetComponentInChildren<RotationCheck> ().Reset ();
 		player.SetActive (true);
 
 	}

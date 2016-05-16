@@ -12,11 +12,13 @@ public class RotationCheck : MonoBehaviour {
 	public bool collided = false;
 	private bool dontRotate = false;
 
-	List<Collider2D> colliders = new List<Collider2D>();
+	[HideInInspector]
+	public List<Collider2D> colliders = new List<Collider2D>();
 
 	void Start()
 	{
 		groundcheck = transform.parent.gameObject.GetComponentInChildren<GroundCheck> ();
+		colliders = new List<Collider2D>();
 	}
 
 	void OnTriggerEnter2D (Collider2D collider)
@@ -84,5 +86,11 @@ public class RotationCheck : MonoBehaviour {
 			yield return null;
 		}
 		transform.parent.transform.rotation = Quaternion.Euler (0, 0, 0);
+	}
+
+	public void Reset()
+	{
+		colliders = new List<Collider2D>();
+		dontRotate = false;
 	}
 }
