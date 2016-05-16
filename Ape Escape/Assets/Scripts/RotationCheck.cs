@@ -56,7 +56,7 @@ public class RotationCheck : MonoBehaviour {
 						euler = checking_euler;
 					}
 				}
-				if (original_euler.z != euler.z) {
+				if (original_euler.z != euler.z && euler.z != 0) {
 					StartCoroutine (RotateDelayCO ());
 					transform.parent.transform.rotation = Quaternion.Euler (0, 0, -euler.z);
 				}
