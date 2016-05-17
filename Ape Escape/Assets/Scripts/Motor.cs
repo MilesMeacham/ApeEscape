@@ -16,7 +16,7 @@ public class Motor : MonoBehaviour {
 
 	private float swingingAccelerationModified = 0;
 
-	public float jumpForce = 9;
+	public float jumpForce = 10;
 	public float swingJumpForce = 7;
 	public float groundedAcceleration = 1f;
 	public float airborneAcceleration = 0.5f;

@@ -2173,6 +2173,10 @@ Prefab:
       propertyPath: m_ConnectedRigidBody
       value: 
       objectReference: {fileID: 287332973}
+    - target: {fileID: 11413096, guid: ba9e5aeb559047a4897a100d33308576, type: 2}
+      propertyPath: jumpForce
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba9e5aeb559047a4897a100d33308576, type: 2}
   m_IsPrefabParent: 0
