@@ -46,9 +46,8 @@ public class Climb : MonoBehaviour {
 			float x_magnitude = rb.position.x - up_position.x;
 			x_magnitude = -x_magnitude;
 
-			rb.position = new Vector2 (rb.position.x + x_magnitude, rb.position.y + y_magnitude);
-			//motor.Vertical (y_magnitude * climb_speed);
-			//motor.RawHorizontal(x_magnitude * climb_speed);
+			rb.velocity = new Vector2 (x_magnitude*climb_speed, y_magnitude*climb_speed);
+			//rb.position = new Vector2 (rb.position.x + x_magnitude, rb.position.y + y_magnitude);
 		} else {
 			swing.climbing = false;
 		}
