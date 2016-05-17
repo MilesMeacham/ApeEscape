@@ -66,10 +66,10 @@ public class KeyboardControls : MonoBehaviour {
 			motor.Horizontal (-1);
 
 		if (Input.GetKey (KeyCode.W))
-			climb.ClimbInDirection (1f);
+			climb.ClimbUp();
 
-		if (Input.GetKey (KeyCode.S))
-			climb.ClimbInDirection (-1f);
+		//if (Input.GetKey (KeyCode.S))
+			//climb.ClimbDown();
 
 	}
 }

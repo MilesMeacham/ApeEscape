@@ -19,10 +19,11 @@ public class Climb : MonoBehaviour {
 	[HideInInspector]
 	public bool climbing = false;
 
+	private Vector3 up_position;
+
 
 	void Start ()
 	{
-		//baseLink = GetComponent<DistanceJoint2D> ();
 		rb = GetComponent<Rigidbody2D> ();
 		motor = GetComponent<Motor> ();
 		swing = GetComponent<Swing> ();
@@ -34,13 +35,20 @@ public class Climb : MonoBehaviour {
 		
 	}
 
-	public void ClimbInDirection (float direction)
+	public void ClimbUp ()
 	{
 		if (climbCollider.attach == true) {
 			swing.climbing = true;
 			swing.SwingDetach ();
-			rb.position = new Vector2 (xPos, rb.position.y);
-			motor.Vertical (direction * climb_speed);
+			float y_magnitude = rb.position.y - up_position.y;
+			y_magnitude = -y_magnitude;
+
+			float x_magnitude = rb.position.x - up_position.x;
+			x_magnitude = -x_magnitude;
+
+			rb.position = new Vector2 (rb.position.x + x_magnitude, rb.position.y + y_magnitude);
+			//motor.Vertical (y_magnitude * climb_speed);
+			//motor.RawHorizontal(x_magnitude * climb_speed);
 		} else {
 			swing.climbing = false;
 		}
@@ -63,6 +71,7 @@ public class Climb : MonoBehaviour {
 	{
 		if(collider.gameObject.layer == 9){
 			current_rope_id = collider.transform.parent.parent.GetInstanceID();
+			up_position = transform.GetComponent<HingeJoint2D>().connectedBody.GetComponent<HingeJoint2D>().connectedBody.transform.position;
 		}
 	}
 
