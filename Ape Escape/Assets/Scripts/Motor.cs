@@ -9,7 +9,7 @@ public class Motor : MonoBehaviour {
 	[HideInInspector] public Rigidbody2D rb;
 	private GroundCheck groundcheck;
 	private BlockedCheck blockedcheck;
-	private SwingCollider swingCollider;
+	public SwingCollider swingCollider;
 	//private float direction = 1;
 	private Vector3 scale;
 	private Animator animator;
@@ -35,7 +35,7 @@ public class Motor : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D> ();
 		groundcheck = GetComponentInChildren<GroundCheck> ();
 		blockedcheck = GetComponentInChildren<BlockedCheck> ();
-		swingCollider = GetComponentInChildren<SwingCollider> ();
+		//swingCollider = GetComponentInChildren<SwingCollider> ();
 		animator = GetComponentInChildren<Animator> ();
 
 		scale = transform.localScale;

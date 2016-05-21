@@ -526,6 +526,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 89987746}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &93522327 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11429340, guid: ba9e5aeb559047a4897a100d33308576,
+    type: 2}
+  m_PrefabInternal: {fileID: 366767931}
+  m_Script: {fileID: 11500000, guid: 8d82ebcaa0bce3245b2ae71fbd0b9944, type: 3}
 --- !u!1 &141381197
 GameObject:
   m_ObjectHideFlags: 0
@@ -2177,6 +2183,10 @@ Prefab:
       propertyPath: jumpForce
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 11413096, guid: ba9e5aeb559047a4897a100d33308576, type: 2}
+      propertyPath: swingCollider
+      value: 
+      objectReference: {fileID: 93522327}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba9e5aeb559047a4897a100d33308576, type: 2}
   m_IsPrefabParent: 0
