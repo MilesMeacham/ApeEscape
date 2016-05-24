@@ -61,7 +61,7 @@ public class Swing : MonoBehaviour {
 					boost = Mathf.Sign (boost) * 2;
 				boost *= boostMultiplier;
 				motor.RawHorizontal (boost);
-			} 
+			}
 		} 
 
 	}
@@ -70,14 +70,13 @@ public class Swing : MonoBehaviour {
 	{
 		if (swingCollider.attach && !swingDetachDelay && !climbing)
 			StartCoroutine (SwingDetachDelayCO ());
-        if (hinge.enabled)
+        if (hinge.enabled && !climbing)
             last_attached_id = current_rope_id;
 		if (swingCollider.attach) {
 			swingBoxCollider.gameObject.SetActive (false);
 			hinge.enabled = false;
 			baseLink.enabled = false;
 			swingCollider.attach = false;
-			climbing = false;
 		}
 
 	}
