@@ -13,11 +13,13 @@ public class RotationCheck : MonoBehaviour {
 	private bool doneRotating = true;
 
 	private float target_angle = 0f;
+	private List<Transform> collided_angles;
 
 
 	void Start()
 	{
 		groundcheck = transform.parent.gameObject.GetComponentInChildren<GroundCheck> ();
+		collided_angles = new List<Transform> ();
 	}
 
 	float reverseAngle(float angle)
@@ -35,19 +37,38 @@ public class RotationCheck : MonoBehaviour {
 		// Layer 8 is the ground Layer
 		if (collider.gameObject.layer == 8) {
 			collided = true;
+			collided_angles.Add (collider.transform);
 			OnTriggerStay2D (collider);
 		}
 	}
 
 	void OnTriggerStay2D(Collider2D collider)
 	{
-		if (collider.gameObject.layer == 8) {
+		if (collider.gameObject.layer == 8 && doneRotating) {
+			//foreach (float angle in collided_angles)
+				//print (angle);
 			collided = true;
 			var original_euler = transform.parent.transform.rotation.eulerAngles;
-			var new_euler = collider.transform.rotation.eulerAngles;
+			//float new_euler = 0f;
+			//float delta = 0f;
+			var new_transform = collided_angles [collided_angles.Count - 1];//collider.transform.rotation.eulerAngles.z;
+			float new_euler = new_transform.rotation.eulerAngles.z;
+			//if (collided_angles.Count > 1) {
+			//	delta = Mathf.DeltaAngle (collided_angles [0], collided_angles [1]);
+			//	if (collided_angles [0] >= collided_angles [1])
+			//		new_euler = collided_angles [0] - Mathf.Abs (delta);
+			//	else
+			//		new_euler = collided_angles [1] - Mathf.Abs (delta);
+			//}
+			//else
+			//	new_euler = collided_angles [0];
+			//foreach (float angle in collided_angles) {
+				//new_euler += angle;
+			//}
+			//new_euler /= collided_angles.Count;
 
-			if (original_euler.z != new_euler.z) {
-				target_angle = new_euler.z;
+			if (original_euler.z != new_euler) {
+				target_angle = new_euler;
 			}
 		}
 	}
@@ -57,6 +78,7 @@ public class RotationCheck : MonoBehaviour {
 		// Layer 8 is the ground Layer
 		if (collider.gameObject.layer == 8) {
 			collided = false;
+			collided_angles.Remove (collider.transform);
 			if(!groundcheck.grounded && !collided) {
 				target_angle = 0;
 			}
