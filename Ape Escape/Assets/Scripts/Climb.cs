@@ -64,7 +64,6 @@ public class Climb : MonoBehaviour {
 		if(collider.gameObject.layer == 9){
 			current_rope_id = collider.transform.parent.parent.GetInstanceID();
 			if (swing.climbing) {
-				print (swing.baseLink.connectedBody);
 				swing.hinge.connectedBody = collider.transform.GetComponent<Rigidbody2D> ();
 			}
 			up_position = transform.GetComponent<HingeJoint2D> ().connectedBody.transform;
