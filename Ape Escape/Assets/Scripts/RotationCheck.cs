@@ -44,7 +44,7 @@ public class RotationCheck : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D collider)
 	{
-		if (collider.gameObject.layer == 8 && doneRotating) {
+		if (collider.gameObject.layer == 8 && doneRotating && collided_angles.Count < 2) {
 			//foreach (float angle in collided_angles)
 				//print (angle);
 			collided = true;
@@ -79,7 +79,7 @@ public class RotationCheck : MonoBehaviour {
 		if (collider.gameObject.layer == 8) {
 			collided = false;
 			collided_angles.Remove (collider.transform);
-			if(!groundcheck.grounded && !collided) {
+			if((!groundcheck.grounded && !collided) || collided_angles.Count < 1) {
 				target_angle = 0;
 			}
 		}
