@@ -36,7 +36,7 @@ public class Climb : MonoBehaviour {
 
 	public void ClimbInDirection (float direction)
 	{
-		if (climbCollider.attach == true) {
+		if (climbCollider.attach == true && swing.hinge.enabled) {
 			swing.climbing = true;
 			swing.baseLink.enabled = false;
 			rb.position = new Vector2 (xPos, rb.position.y);
