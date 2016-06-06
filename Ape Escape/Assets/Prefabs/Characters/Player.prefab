@@ -443,9 +443,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -0.8, y: 0.21747059}
+  m_Offset: {x: -0.8, y: -0.38987714}
   serializedVersion: 2
-  m_Size: {x: 1.7, y: 2.4349408}
+  m_Size: {x: 1.7, y: 3.6496375}
 --- !u!61 &6181608
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -552,7 +552,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  jumpForce: 9
+  swingCollider: {fileID: 11429340}
+  jumpForce: 10
   swingJumpForce: 7
   groundedAcceleration: 1
   airborneAcceleration: 0.5
@@ -613,9 +614,8 @@ MonoBehaviour:
   climbBoxCollider: {fileID: 6166760}
   climbCollider: {fileID: 11457380}
   current_rope_id: 0
-  climb_speed: 3
+  climb_speed: 5
   xPos: 0
-  climbing: 0
 --- !u!114 &11442044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -723,7 +723,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.770113
+  m_Distance: 1
   m_MaxDistanceOnly: 0
 --- !u!233 &23369532
 HingeJoint2D:
